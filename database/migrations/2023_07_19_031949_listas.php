@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Parroquia extends Migration
+class Listas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class Parroquia extends Migration
      */
     public function up()
     {
-        Schema::create('parroquias', function (Blueprint $table) {
-            $table->id();
-            $table->string('parroquia');
+        Schema::create('listas', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('descripcion',350);
+            $table->string('numero');
+            $table->string('foto',50);
             $table->boolean('estado')->default(true);
-            $table->foreignId('canton_id')->constrained('cantones');
+           
         });
     }
 
@@ -28,6 +30,6 @@ class Parroquia extends Migration
      */
     public function down()
     {
-       Schema::dropIfExists('parroquias');
+         Schema::dropIfExists('listas');
     }
 }

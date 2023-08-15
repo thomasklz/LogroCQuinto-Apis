@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Parroquia extends Model
+class Candidato extends Model
 {
     use HasFactory;
     public $timestamps=false;
-    protected $table = 'parroquias';
+    protected $table = 'candidatos';
      
      protected $fillable = [
-        'parroquia','canton_id','estado'
+        'descripcion','foto','idlista','idtipocandidato','estado'
     ];
 }
